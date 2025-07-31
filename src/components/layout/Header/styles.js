@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  background: #22425C;;
+  background: #22425C;
   color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
+  width: 100%;
 `;
 
 export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 `;
 
 export const LogoSection = styled.div`
@@ -36,7 +37,15 @@ export const Logo = styled.div`
 
   .logo-text {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight:700;
     color: white;
   }
 `;
+
+export const HeaderActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+
+
