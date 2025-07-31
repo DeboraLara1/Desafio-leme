@@ -1,0 +1,77 @@
+{
+  "entidades": [
+    {
+      "id": 1,
+      "tipo": "pessoa",
+      "nome": "Lucas da Silva",
+      "cpf": "123.456.789-01",
+      "sexo": "Masculino",
+      "data_nascimento": "1990-04-12",
+      "nome_mae": "Maria da Silva",
+      "telefones": ["(11) 99999-1234"],
+      "emails": ["lucas@lemeforense.com.br"],
+      "enderecos": ["Rua das Laranjeiras, 123 - São Paulo/SP"]
+    },
+    {
+      "id": 2,
+      "tipo": "pessoa",
+      "nome": "João Pereira",
+      "cpf": "456.789.123-10",
+      "sexo": "Masculino",
+      "data_nascimento": "1988-07-01",
+      "nome_mae": "Ana Pereira",
+      "telefones": ["(11) 98888-4444"],
+      "emails": ["joao@lemeforense.com.br"],
+      "enderecos": ["Rua dos Cravos, 321 - Campinas/SP"]
+    },
+    {
+      "id": 3,
+      "tipo": "pessoa",
+      "nome": "Lucas Nascimento",
+      "cpf": "123.789.456-01",
+      "sexo": "Masculino",
+      "data_nascimento": "1992-02-21",
+      "nome_mae": "Júlia Nascimento",
+      "telefones": ["(21) 99999-0000"],
+      "emails": ["lucas@gmail.com"],
+      "enderecos": ["Av. Brasil, 500 - Rio de Janeiro/RJ"]
+    },
+    {
+      "id": 4,
+      "tipo": "empresa",
+      "nome": "Leme Forense LTDA",
+      "cnpj": "12.345.678/0001-90",
+      "capital_social": "R$ 500.000,00",
+      "data_inicio_atividade": "2009-08-01",
+      "situacao_cadastral": "Ativa",
+      "cnae_principal": "62.01-5-01",
+      "telefones": ["(11) 99999-4321"],
+      "emails": ["contato@lemeforense.com.br"],
+      "enderecos": ["Rua Principal, 987 - São Paulo/SP"],
+      "quadro_societario": ["Carlos Souza", "Mariana Lima"]
+    }
+  ],
+  "pesquisas_recentes": [
+    {
+      "id": 1,
+      "tipo": "nome",
+      "valor": "Lucas",
+      "data": "2024-01-15T10:30:00Z",
+      "resultados": 2
+    },
+    {
+      "id": 2,
+      "tipo": "email",
+      "valor": "lucas@lemeforense.com.br",
+      "data": "2024-01-14T15:45:00Z",
+      "resultados": 1
+    },
+    {
+      "id": 3,
+      "tipo": "documento",
+      "valor": "123.456.789-01",
+      "data": "2024-01-13T09:20:00Z",
+      "resultados": 1
+    }
+  ]
+}
