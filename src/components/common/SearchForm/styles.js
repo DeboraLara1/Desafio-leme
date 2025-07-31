@@ -1,0 +1,44 @@
+import styled from 'styled-components';
+
+export const SearchFormContainer = styled.form`
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+`;
+
+export const FormRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: end;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+`;
+
+export const FormField = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+`;
+
+export const Label = styled.label`
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.875rem;
+`;
+
+export const ErrorMessage = styled.span`
+  color: #dc3545;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  padding: 2px 6px;
+  z-index: 10;
+`; 
