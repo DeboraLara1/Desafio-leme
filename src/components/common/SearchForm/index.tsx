@@ -189,33 +189,32 @@ const SearchForm: React.FC<SearchFormProps> = ({
         </FormField>
 
         <FormField>
-          <Button
-            type="submit"
-            label="Pesquisar"
-            icon="pi pi-search"
-            loading={loading}
-            disabled={!searchType}
-            style={{
-              minWidth: "120px",
-              backgroundColor: "#007bff",
-              borderColor: "#007bff",
-            }}
-          />
-        </FormField>
-
-        <FormField>
-          <Button
-            type="button"
-            label="Limpar"
-            icon="pi pi-times"
-            severity="secondary"
-            onClick={handleClear}
-            style={{
-              minWidth: "120px",
-              backgroundColor: "#6c757d",
-              borderColor: "#6c757d",
-            }}
-          />
+          <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+            <Button
+              type="submit"
+              label="Pesquisar"
+              icon="pi pi-search"
+              loading={loading}
+              disabled={!searchType}
+              style={{
+                 width: "350px",
+                backgroundColor: "#007bff",
+                borderColor: "#007bff",
+              }}
+            />
+            <Button
+              type="button"
+              label="Limpar"
+              icon="pi pi-times"
+              severity="secondary"
+              onClick={handleClear}
+              style={{
+ width: "350px",
+                backgroundColor: "#6c757d",
+                borderColor: "#6c757d",
+              }}
+            />
+          </div>
         </FormField>
       </FormRow>
     </SearchFormContainer>

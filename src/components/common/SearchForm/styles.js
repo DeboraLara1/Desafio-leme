@@ -10,7 +10,7 @@ export const SearchFormContainer = styled.form`
 
 export const FormRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-columns: 2fr 2fr 1fr;
   gap: 1rem;
   align-items: end;
 
@@ -25,11 +25,6 @@ export const FormField = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   position: relative;
-
-  .button-search {
-    backgroundcolor: #007bff !important;
-    bordercolor: #007bff;
-  }
 `;
 
 export const Label = styled.label`
@@ -38,10 +33,6 @@ export const Label = styled.label`
   font-size: 0.875rem;
 `;
 
-// export const ButtonSearch = styled.button`
-//   backgroundColor: #007bff !important;
-//   borderColor: #007bff;
-// `;
 
 export const ErrorMessage = styled.span`
   color: #dc3545;
