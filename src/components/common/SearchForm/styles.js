@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SearchFormContainer = styled.form`
   background: white;
@@ -25,6 +25,11 @@ export const FormField = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   position: relative;
+
+  .button-search {
+    backgroundcolor: #007bff !important;
+    bordercolor: #007bff;
+  }
 `;
 
 export const Label = styled.label`
@@ -32,6 +37,11 @@ export const Label = styled.label`
   color: #495057;
   font-size: 0.875rem;
 `;
+
+// export const ButtonSearch = styled.button`
+//   backgroundColor: #007bff !important;
+//   borderColor: #007bff;
+// `;
 
 export const ErrorMessage = styled.span`
   color: #dc3545;
@@ -41,4 +51,4 @@ export const ErrorMessage = styled.span`
   left: 0;
   padding: 2px 6px;
   z-index: 10;
-`; 
+`;

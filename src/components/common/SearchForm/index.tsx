@@ -23,29 +23,37 @@ interface SearchTypeOption {
 const validationMap: Record<SearchType, z.ZodString> = {
   nome: z.string()
     .min(2, "Digite pelo menos 2 caracteres")
-    .refine(v => /[A-Za-zÀ-ÿ]/.test(v), "Nome deve conter letras"),
-  email: z.string()
+    .refine((v) => /[A-Za-zÀ-ÿ]/.test(v), "Nome deve conter letras"),
+  email: z
+    .string()
     .min(1, "Digite um email")
     .email("Formato de email inválido"),
   documento: z.string()
     .min(1, "Digite um documento")
-    .refine(v => {
+    .refine((v) => {
       const len = v.replace(/\D/g, "").length;
       return len === 11 || len === 14;
     }, "CPF deve ter 11 dígitos ou CNPJ 14"),
   telefone: z.string()
     .min(1, "Digite um telefone")
-    .refine(v => v.replace(/\D/g, "").length >= 10, "Telefone deve ter ao menos 10 dígitos"),
+    .refine(
+      (v) => v.replace(/\D/g, "").length >= 10,
+      "Telefone deve ter ao menos 10 dígitos"
+    ),
   endereco: z.string()
     .min(5, "Endereço com mínimo de 5 caracteres")
-    .refine(v => /[A-Za-zÀ-ÿ]/.test(v) && /\d/.test(v), "Endereço deve conter letras e números"),
-  "": z.string().min(1, "Digite um valor para busca")
+    .refine(
+      (v) => /[A-Za-zÀ-ÿ]/.test(v) && /\d/.test(v),
+      "Endereço deve conter letras e números"
+    ),
+  "": z.string().min(1, "Digite um valor para busca"),
 };
 
 const getSchema = (type: SearchType): z.ZodObject<any> =>
   z.object({
     searchType: z.string().min(1, "Selecione o tipo de busca"),
-    searchValue: validationMap[type] || z.string().min(1, "Digite um valor para busca"),
+    searchValue:
+      validationMap[type] || z.string().min(1, "Digite um valor para busca"),
   });
 
 const placeholders: Record<SearchType, string> = {
@@ -54,7 +62,7 @@ const placeholders: Record<SearchType, string> = {
   email: "Digite o email",
   telefone: "Digite o telefone",
   endereco: "Digite o endereço",
-  "": "Digite o valor"
+  "": "Digite o valor",
 };
 
 const maskMap = {
@@ -74,7 +82,11 @@ const searchTypeOptions: SearchTypeOption[] = [
   { label: "Endereço", value: "endereco" },
 ];
 
-const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => {
+const SearchForm: React.FC<SearchFormProps> = ({
+  onSearch,
+  loading,
+  onNavigateToResults,
+}) => {
   const [searchType, setSearchType] = useState<SearchType>("");
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -85,11 +97,13 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => {
     setValue,
     trigger,
   } = useForm<SearchFormData>({
-    resolver: zodResolver(getSchema(searchType)) as any,
+    resolver: zodResolver(getSchema(searchType)),
     mode: "onBlur",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement> | InputMaskChangeEvent): void => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement> | InputMaskChangeEvent
+  ): void => {
     const value = e.target.value || "";
     setInputValue(value);
     setValue("searchValue", value);
@@ -141,7 +155,11 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading }) => {
   };
 
   const onSubmit: SubmitHandler<SearchFormData> = (data) => {
-    onSearch({ [data.searchType]: data.searchValue });
+    if (onNavigateToResults) {
+      onNavigateToResults({ [data.searchType]: data.searchValue });
+    } else {
+      onSearch({ [data.searchType]: data.searchValue });
+    }
   };
 
   return (
