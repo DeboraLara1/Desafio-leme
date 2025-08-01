@@ -11,8 +11,12 @@
     "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.6",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
