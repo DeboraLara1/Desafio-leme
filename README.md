@@ -75,7 +75,8 @@ Sistema de consulta de dados básicos desenvolvido com React, TypeScript e Prime
 
 2. **Iniciar o JSON Server (API mock):**
    ```bash
-   npm run server
+   cd mock
+   json-server --watch db.json --port 3001
    ```
    - O JSON Server rodará em: `http://localhost:3001`
    - **Este é necessário para que a aplicação funcione corretamente (OBRIGATÓRIO)**
