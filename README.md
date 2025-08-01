@@ -142,7 +142,6 @@ dashboard-de-busca-react/
 │   ├── contexts/                     # Context API
 │   │   ├── SearchContext.tsx         # Contexto para busca e entidades
 │   │   ├── RecentSearchesContext.tsx # Contexto para pesquisas recentes
-│   │   ├── AppContext.tsx            # Contexto antigo (não usado)
 │   │   └── index.ts                  # Exportações dos contextos
 │   ├── hooks/                        # Custom hooks
 │   │   └── useEntityModal.ts         # Hook para gerenciar modal
