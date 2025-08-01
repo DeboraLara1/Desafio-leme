@@ -33,7 +33,6 @@ export const Label = styled.label`
   font-size: 0.875rem;
 `;
 
-
 export const ErrorMessage = styled.span`
   color: #dc3545;
   font-size: 0.75rem;
@@ -42,4 +41,22 @@ export const ErrorMessage = styled.span`
   left: 0;
   padding: 2px 6px;
   z-index: 10;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+`;
+
+export const SearchButton = styled.button`
+  width: 350px;
+  background-color: #007bff;
+  border-color: #007bff;
+`;
+
+export const ClearButton = styled.button`
+  width: 350px;
+  background-color: #6c757d;
+  border-color: #6c757d;
 `;
