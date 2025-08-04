@@ -174,7 +174,7 @@ const EntityModal: React.FC<EntityModalProps> = ({
           <span className={`entity-type-badge ${entity.tipo}`}>
             {entity.tipo === "pessoa" ? "Pessoa Física" : "Empresa"}
           </span>
-          <span className="entity-name">{entity.nome}</span>
+          <span id="entity-modal-title" className="entity-name">{entity.nome}</span>
         </div>
       }
       visible={visible}
@@ -182,8 +182,13 @@ const EntityModal: React.FC<EntityModalProps> = ({
       style={{ width: "90vw", maxWidth: "1000px" }}
       footer={footer}
       className="entity-modal"
+      aria-labelledby="entity-modal-title"
+      aria-describedby="entity-modal-description"
     >
       <ModalContent>
+        <div id="entity-modal-description" className="sr-only">
+          Detalhes da entidade {entity.nome}
+        </div>
         {entity.tipo === "pessoa"
           ? renderPessoaDetails()
           : renderEmpresaDetails()}
